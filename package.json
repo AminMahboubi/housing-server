@@ -2,10 +2,11 @@
   "name": "housing-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./bin/www",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.5"
+  },
+  "engines": {
+    "node": "8.9.0"
   }
 }
