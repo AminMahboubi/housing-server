@@ -9,15 +9,21 @@ const houseRoutes = require('./routes/houseRoutes');
 const uri = 'mongodb://dima101:dima101pass@ds135156.mlab.com:35156/housing';
 
 mongoose.Promise = global.Promise;
-mongoose.connect(uri, {useMongoClient: true }).then(
+mongoose.connect(uri, {
+  useMongoClient: true
+}).then(
   () => {},
-  err => { console.error("Error Connecting Mongodb")});
+  err => {
+    console.error(err)
+  });
 
 
 const app = express();
 app.use(compression())
 app.use(logger('dev'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 
@@ -28,8 +34,9 @@ app.all('/', (req, res) => {
 app.use('/api/house', houseRoutes);
 
 app.use((req, res) => {
-  res.status(404).send({url: req.originalUrl + ' not found'})
-
+  res.status(404).send({
+    url: req.originalUrl + ' not found'
+  });
 });
 
 module.exports = app;

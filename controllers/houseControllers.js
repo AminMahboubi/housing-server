@@ -34,7 +34,6 @@ exports.updateHouse = (req, res) => {
   })
 }
 
-
 exports.deleteHouse = (req, res) => {
   HouseModel.remove({
     _id: req.params.houseId
