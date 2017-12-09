@@ -27,10 +27,9 @@ app.all('/', (req, res) => {
 
 app.use('/api/house', houseRoutes);
 
-app.use((req, res, next) => {
-  var err = new Error('Not Found');
-  err.status = 403;
-  next(err);
+app.use((req, res) => {
+  res.status(404).send({url: req.originalUrl + ' not found'})
+
 });
 
 module.exports = app;
