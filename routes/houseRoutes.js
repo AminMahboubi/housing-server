@@ -1,8 +1,8 @@
 const express = require('express');
 
 const houseController = require('../controllers/houseControllers');
-var router = express.Router()
 
+var router = express.Router()
 
 router.route('/')
   .get(houseController.listHouses)
@@ -12,4 +12,5 @@ router.route('/:houseId')
   .get(houseController.getHouse)
   .put(houseController.updateHouse)
   .delete(houseController.deleteHouse);
+
 module.exports = router;

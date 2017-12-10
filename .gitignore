@@ -1,6 +1,4 @@
-config.json
 sample.json
-s3.js
 .tern-project
 .env
 # Created by https://www.gitignore.io/api/node
