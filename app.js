@@ -3,13 +3,12 @@ const compression = require('compression')
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const houseRoutes = require('./routes/houseRoutes');
 
-const uri = 'mongodb://dima101:dima101pass@ds135156.mlab.com:35156/housing';
-
 mongoose.Promise = global.Promise;
-mongoose.connect(uri, {
+mongoose.connect(process.env.MONGODB_URI, {
   useMongoClient: true
 }).then(
   () => {},
