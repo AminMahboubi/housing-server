@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 
 var houseSchema = new mongoose.Schema({
-  _uid: {
-    type: Number,
-    unique: true //Unique Phone ID
-  },
+  _uid: String,
   name: String,
   surname: String,
   price: Number,
