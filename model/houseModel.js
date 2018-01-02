@@ -12,15 +12,15 @@ var houseSchema = new mongoose.Schema({
   bills: Number, // if inclusive then 0
   deposit: Number, // number of month
   address: String,
-  campus: Number, // 0:Leonardo, 1:Bovisa, 2:None
+  campus: String, // 0:Leonardo, 1:Bovisa, 2:None
   neighborhood: String,
   phone: String,
-  preferredSex: Number, // 0:Girl, 1:Boy, 2:Both
+  preferredSex: String, // 0:Girl, 1:Boy, 2:Both
   description: String,
   minimumStayRequired: Number, // If no minimum then 0
   english: Boolean, // Landlord speaks English then true
-  houseType: Number, // 0:Bed, 1:Bedroom, 2:House
-  bed: Number, // 0:Single, 1:Double, 2:King
+  houseType: String, // 0:Bed, 1:Bedroom, 2:House
+  bed: String, // 0:Single, 1:Double, 2:King
   numberOfRooms: Number, // 0:Studio
   numberOfPeoples: Number, // 0:Studio
   pet: Boolean,
