@@ -13,4 +13,10 @@ router.route('/:houseId')
   .put(houseController.updateHouse)
   .delete(houseController.deleteHouse);
 
+router.route('/user/:userId')
+  .get(houseController.listUserHouses);
+
+router.route('/user/:userId/:houseId')
+  .put(houseController.updateHouse)
+  .delete(houseController.deleteHouse);
 module.exports = router;

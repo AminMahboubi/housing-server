@@ -9,8 +9,10 @@ var houseSchema = new mongoose.Schema({
   bills: Number, // if inclusive then 0
   deposit: Number, // number of month
   address: String,
+  lat: Number,
+  lng: Number,
   campus: String, // 0:Leonardo, 1:Bovisa, 2:None
-  neighborhood: String,
+  email: String,
   phone: String,
   preferredSex: String, // 0:Girl, 1:Boy, 2:Both
   description: String,
@@ -24,19 +26,10 @@ var houseSchema = new mongoose.Schema({
   floor: Number,
   lift: Boolean,
   area: Number,
-  imageLinks: [String],
-  availability: {
-    type: Date,
-    default: Date.now
-  },
-  insertDate: {
-    type: Date,
-    default: Date.now
-  },
-  updateDate: {
-    type: Date,
-    default: Date.now
-  }
+  // imageLinks: [String],
+  availability: Date,
+  insertDate: Date,
+  updateDate: Date
 });
 
 module.exports = mongoose.model('House', houseSchema);
