@@ -8,7 +8,9 @@ exports.listHouses = (req, res) => {
 }
 
 exports.listUserHouses = (req, res) => {
-  HouseModel.find({"_uid": req.params.userId}, (err, houses) => {
+  HouseModel.find({
+    "_uid": req.params.userId
+  }, (err, houses) => {
     if (err) res.status(404).send(err);
     res.json(houses);
   });
@@ -21,13 +23,14 @@ exports.newHouse = (req, res) => {
   house.save((err, house) => {
     if (err) res.send(err);
     res.json({
-      message: 'House successfully saved'
+      message: 'House successfully saved',
+      house: house
     });
   })
 }
 
 exports.getHouse = (req, res) => {
-  HouseModel.findById(req.params.houseId, (err, house) => {
+  HouseModel.findById(req.params.houseId, "-_uid", (err, house) => {
     if (err) res.send(err);
     house._uid = null;
     res.json(house);
