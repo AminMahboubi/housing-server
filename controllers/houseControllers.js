@@ -19,6 +19,7 @@ exports.listUserHouses = (req, res) => {
 exports.newHouse = (req, res) => {
   delete req.body._id;
   let house = new HouseModel(req.body);
+  house._uid = req.params.userId;
   house.updateDate = null;
   house.insertDate = Date.now();
 

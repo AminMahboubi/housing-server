@@ -5,16 +5,14 @@ const houseController = require('../controllers/houseControllers');
 var router = express.Router()
 
 router.route('/')
-  .get(houseController.listHouses)
-  .post(houseController.newHouse);
+  .get(houseController.listHouses);
 
 router.route('/:houseId')
-  .get(houseController.getHouse)
-  .put(houseController.updateHouse)
-  .delete(houseController.deleteHouse);
+  .get(houseController.getHouse);
 
 router.route('/user/:userId')
-  .get(houseController.listUserHouses);
+  .get(houseController.listUserHouses)
+  .post(houseController.newHouse);
 
 router.route('/user/:userId/:houseId')
   .put(houseController.updateHouse)
