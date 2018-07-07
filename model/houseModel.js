@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 var houseSchema = new mongoose.Schema({
   _uid: String,
@@ -32,4 +32,4 @@ var houseSchema = new mongoose.Schema({
   updateDate: Date
 });
 
-module.exports = mongoose.model('House', houseSchema);
+module.exports = mongoose.model("House", houseSchema);
